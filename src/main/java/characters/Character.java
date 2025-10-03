@@ -24,7 +24,12 @@ public class Character{
     }
 
     public void setHp(int new_hp){
-        this.hp = new_hp;
+        if(new_hp < 0){
+            this.hp = 0;
+        }
+        else{
+            this.hp = new_hp;
+        }
     }
 
     public int getHp() {
@@ -45,6 +50,11 @@ public class Character{
 
     public void setPower(int power) {
         this.power = power;
+    }
+        
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "{hp=" + hp + ", power=" + power + "}";
     }
 
 
